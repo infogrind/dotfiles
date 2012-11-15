@@ -1,0 +1,35 @@
+site hotstuff
+  server login-61.hoststar.ch
+  remote /html
+  local ~/Software/websites/hotstuff.ch
+  username web210
+  password r1hwrp5v
+  url http://www.hotstuff.ch/
+  exclude ".*.swp"
+  exclude ".*.swo"
+  exclude "tags"
+  exclude ".svn"
+
+site sd
+  server login-61.hoststar.ch
+  remote /html/socialdarwinists
+  local ~/Software/websites/sd
+  username web210
+  password r1hwrp5v
+  url http://socialdarwinists.net/
+  exclude ".*.swp"
+  exclude ".*.swo"
+  exclude "tags"
+  exclude ".svn"
+
+site inr
+  server login-61.hoststar.ch
+  remote /html/inr036
+  local ~/Software/websites/inr036
+  username web210
+  password r1hwrp5v
+  url http://www.inr036.net/
+  exclude ".*.swp"
+  exclude ".*.swo"
+  exclude "tags"
+  exclude ".svn"

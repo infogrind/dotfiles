@@ -1,0 +1,13 @@
+[user]
+	name = Marius Kleiner
+	email = infogrind@hotstuff.ch
+[github]
+	user = infogrind
+	token = 1c408bb8f2145fa11138cf11743eadc1
+[alias]
+	co = checkout
+    ci = commit
+    st = status
+    br = branch
+[color]
+	ui = true
