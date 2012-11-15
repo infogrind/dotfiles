@@ -1,11 +1,5 @@
 export EDITOR="/usr/bin/vim"
-#export BIBINPUTS=.:$HOME/tex
 export LANG=en_US.UTF-8
-
-# Check if X11 is running, if yes, set DISPLAY.
-# [2008/09/17 MK] Disabled for leopard. 
-#PSOUT=`ps auxw | grep '/Applications/Utilities/X11.app/Contents/MacOS/X11' |\
-#  grep -v grep`
 
 if [ -n "$PSOUT" ]; then
   export DISPLAY=":0.0"
