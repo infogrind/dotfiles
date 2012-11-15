@@ -8,6 +8,7 @@
     ci = commit
     st = status
     br = branch
+	info = log --graph --oneline --date-order --decorate --color --all
 [color]
 	ui = true
 [push]
