@@ -41,10 +41,14 @@ fi
 # Functions for git prompt
 function minutes_since_last_commit {
     now=`date +%s`
-    last_commit=`git log --pretty=format:'%at' -1`
-    seconds_since_last_commit=$((now-last_commit))
-    minutes_since_last_commit=$((seconds_since_last_commit/60))
-    echo $minutes_since_last_commit
+    last_commit="$(git log --pretty=format:'%at' -1 2>/dev/null)"
+    if [ -n "$last_commit" ]; then
+        seconds_since_last_commit=$((now-last_commit))
+        minutes_since_last_commit=$((seconds_since_last_commit/60))
+        echo $minutes_since_last_commit
+    else
+        echo 0
+    fi
 }
 
 git_prompt() {
