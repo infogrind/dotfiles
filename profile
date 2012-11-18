@@ -1,3 +1,4 @@
+# vim:ft=sh
 export EDITOR="/usr/bin/vim"
 export LANG=en_US.UTF-8
 
