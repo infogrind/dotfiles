@@ -52,10 +52,12 @@ function minutes_since_last_commit {
 }
 
 git_prompt() {
-    local g="$(__gitdir)"
-    if [ -n "$g" ]; then
-        local cln=`git status | grep 'working directory clean'`
+    local DATE=`date`
+    local GITDIR=`__gitdir`
+    if [ -n "$GITDIR" ]; then
+
         local MINUTES_SINCE_LAST_COMMIT=`minutes_since_last_commit`
+
         if [ "$MINUTES_SINCE_LAST_COMMIT" -gt 30 ]; then
             local COLOR=${RED}
         elif [ "$MINUTES_SINCE_LAST_COMMIT" -gt 10 ]; then
@@ -63,20 +65,16 @@ git_prompt() {
         else
             local COLOR=${GREEN}
         fi
-        local SINCE_LAST_COMMIT="\[${COLOR}\]$(minutes_since_last_commit)m\[${NC}\]"
-        # The __git_ps1 function inserts the current git branch where %s is
-        if [ -n "$cln" ]; then
-            local GIT_PROMPT=`__git_ps1 "(%s)"`
-        else
-            local GIT_PROMPT=`__git_ps1 "(%s|${SINCE_LAST_COMMIT})"`
-        fi
-        echo ${GIT_PROMPT}
+
+        BRANCH=`__git_ps1 '%s'`
+        MINUTES="\[${COLOR}\]${MINUTES_SINCE_LAST_COMMIT}m\[${NC}\]"
+        GIT_PROMPT=" (${BRANCH}|${MINUTES})"
+        echo "$GIT_PROMPT"
     fi
+    #echo "\[${GREEN}\]Green: ${DATE} \[${RED}\]Hello world \[${NC}\]"
 }
 
-# Make a nice colorful prompt
-export PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \w \[${NC}\]$(git_prompt)\$ "'
-#export PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \w \[${NC}\]"'$(git_prompt)'"\$ " 
+export PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \w\[${NC}\]$(git_prompt) \$ "'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
