@@ -83,3 +83,7 @@ export PATH
 
 # More memory for sbt
 export SBT_OPTS="-XX:MaxPermSize=256M"
+
+# Fix OS X locale (otherwise python locale won't work well)
+# See http://fruitfulerrors.blogspot.hu/2011/01/osx-106-lcctype.html
+export LC_CTYPE="en_US.utf-8"
