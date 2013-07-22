@@ -30,12 +30,9 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Add personal bin directory to beginning of path.
 export PATH=$HOME/bin:$PATH
 
-# source all homebrew bash completion files
-BREW_BASH_COMP_D="`brew --prefix`/etc/bash_completion.d"
-if [ -d "$BREW_BASH_COMP_D" ]; then
-    for f in "$BREW_BASH_COMP_D"/*; do
-        [ -f "$f" ] && source "$f"
-    done
+## source all homebrew bash completion files
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
 fi
 
 # Functions for git prompt
