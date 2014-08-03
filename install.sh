@@ -27,3 +27,8 @@ for file in $files; do
     echo "Creating symlink ~/.$file"
     ln -s $dir/"$file" ~/.$file
 done
+
+echo Please install the following files manually:
+for f in $manual_files; do
+    echo "* $f"
+done
