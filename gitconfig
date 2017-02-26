@@ -1,7 +1,6 @@
 [user]
 	name = Marius Kleiner
-	email = infogrind@hotstuff.ch
-	signingkey = marius@kleiner.com
+	email = kleiner@gmail.com
 [github]
 	user = infogrind
 [alias]
@@ -28,3 +27,8 @@
 	prompt = false
 [merge]
 	tool = Kaleidoscope
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
+[core]
+	autocrlf = input
