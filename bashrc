@@ -20,3 +20,4 @@ alias sci='svn ci'
 alias gst='git status'
 alias gci='git commit'
 
+PATH="/Users/marius/.conscript/bin:$PATH"
