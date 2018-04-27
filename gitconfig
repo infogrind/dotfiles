@@ -10,6 +10,8 @@
     br = branch
 	info = log --graph --oneline --date-order --decorate --color --all
 	tnylog = log --oneline --graph --decorate
+	up = "!git remote update -p; git merge --ff-only @{u}"
+	updiff = log --graph --oneline --decorate --date-order --color --boundary @{u}..
 [color]
 	ui = true
 [push]
