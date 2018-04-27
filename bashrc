@@ -21,3 +21,5 @@ alias gst='git status'
 alias gci='git commit'
 
 PATH="/Users/marius/.conscript/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
