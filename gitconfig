@@ -34,3 +34,4 @@
 	smudge = git-media-smudge %f
 [core]
 	autocrlf = input
+	editor = vim -f
