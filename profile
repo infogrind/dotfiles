@@ -75,7 +75,7 @@ git_prompt() {
     #echo "\[${GREEN}\]Green: ${DATE} \[${RED}\]Hello world \[${NC}\]"
 }
 
-export PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \w\[${NC}\]$(git_prompt) \$ "'
+export PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \W\[${NC}\]$(git_prompt) \$ "'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .profile.pysave
