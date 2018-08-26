@@ -20,6 +20,9 @@ alias sci='svn ci'
 alias gst='git status'
 alias gci='git commit'
 
+# Taken from https://stackoverflow.com/a/1571525
+alias git-root='cd $(git rev-parse --show-toplevel)'
+
 PATH="/Users/marius/.conscript/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
