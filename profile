@@ -2,6 +2,10 @@
 export EDITOR="/usr/bin/vim"
 export LANG=en_US.UTF-8
 
+# Disable OS X Catalina warning about zsh being the default shell
+# See https://apple.stackexchange.com/a/371998
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 if [ -n "$PSOUT" ]; then
   export DISPLAY=":0.0"
 fi
