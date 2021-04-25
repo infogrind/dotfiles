@@ -20,6 +20,7 @@ alias sci='svn ci'
 alias gst='git status'
 alias gci='git commit'
 alias brewup='brew update && brew upgrade && brew cleanup -s && echo "All OK"'
+alias gpp='git push && git push diskstation'
 
 # Taken from https://stackoverflow.com/a/1571525
 alias git-root='cd $(git rev-parse --show-toplevel)'
