@@ -10,13 +10,6 @@ if [ -n "$PSOUT" ]; then
   export DISPLAY=":0.0"
 fi
 
-# Ruby environment variables
-PREFIX=/usr/local
-export GEM_HOME=$PREFIX/lib/ruby/gems/1.8
-export RUBYLIB=$PREFIX/lib/ruby:$PREFIX/lib/site_ruby/1.8
-export RUBYLIB=$RUBYLIB:$HOME/Library/Ruby/Site
-export RUBYOPT='-rubygems'
-
 # Java
 # See http://stackoverflow.com/a/6588410
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
