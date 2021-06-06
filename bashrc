@@ -28,3 +28,12 @@ alias git-root='cd $(git rev-parse --show-toplevel)'
 PATH="/Users/marius/.conscript/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Added by GDK bootstrap
+export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:${PKG_CONFIG_PATH}"
+
+# Added by GDK bootstrap
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1 --with-readline-dir=/usr/local/opt/readline"
+
+# Added by GDK bootstrap
+source /Users/marius/.asdf/asdf.sh
