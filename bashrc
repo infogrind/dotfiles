@@ -6,7 +6,9 @@
 # and are not inherited by subshells. These most particularly include alias
 # and function definitions.
 
+################################################################################
 # Bash completions
+################################################################################
 
 # Source all homebrew bash completion files
 if type brew &>/dev/null; then
@@ -20,8 +22,14 @@ if type brew &>/dev/null; then
   fi
 fi
 
+# fzf initialization includes bash completions, so we need to include it here
+# rather than in profile:
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+
+################################################################################
 # Function definitions
+################################################################################
 
 function ts   # ts x y sets screen width to x chars and y lines
 {
@@ -66,16 +74,10 @@ git_prompt() {
     #echo "\[${GREEN}\]Green: ${DATE} \[${RED}\]Hello world \[${NC}\]"
 }
 
-# Fancy git prompt (uses the above two functions)
-# Import color definitions if they exist
-if [ -f $HOME/.ansi_colors ]; then
-    . $HOME/.ansi_colors
-fi
-PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \W\[${NC}\]$(git_prompt) \$ "'
-
-
-
+################################################################################
 # Alias definitions
+################################################################################
+
 alias ls='gls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
@@ -93,4 +95,15 @@ alias gpp='git push && git push diskstation'
 # Taken from https://stackoverflow.com/a/1571525
 alias git-root='cd $(git rev-parse --show-toplevel)'
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+################################################################################
+# Other (sub)shell specific configuration
+################################################################################
+
+# Fancy git prompt (uses the above two functions)
+# Import color definitions if they exist
+if [ -f $HOME/.ansi_colors ]; then
+    . $HOME/.ansi_colors
+fi
+PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \W\[${NC}\]$(git_prompt) \$ "'
