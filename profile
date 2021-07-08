@@ -23,11 +23,6 @@ export LC_ALL=en_US.UTF-8
 # See https://apple.stackexchange.com/a/371998
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# Run .bashrc if it exists
-if [ -f $HOME/.bashrc ]; then
-  . $HOME/.bashrc
-fi
-
 # Add (or move) Homebrew prefix to the beginning of the PATH
 CLEANPATH=`echo $PATH | sed -E 's#/usr/local/bin:?##'`
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
@@ -42,3 +37,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:${PKG_CONFIG_PATH}"
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1 --with-readline-dir=/usr/local/opt/readline"
 source /Users/marius/.asdf/asdf.sh
+
+# Run .bashrc if it exists
+if [ -f $HOME/.bashrc ]; then
+  . $HOME/.bashrc
+fi
