@@ -1,6 +1,8 @@
 # vim:ft=sh
 export EDITOR="/usr/bin/vim"
-export LANG=en_US.UTF-8
+
+# Locale settings to enable proper use of Unicode/UTF-8 throughout
+export LC_ALL=en_US.UTF-8
 
 # Disable OS X Catalina warning about zsh being the default shell
 # See https://apple.stackexchange.com/a/371998
@@ -75,9 +77,5 @@ export PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \W\[${NC}\]$(
 
 # More memory for sbt
 export SBT_OPTS="-XX:MaxPermSize=256M"
-
-# Fix OS X locale (otherwise python locale won't work well)
-# See http://fruitfulerrors.blogspot.hu/2011/01/osx-106-lcctype.html
-export LC_CTYPE="en_US.utf-8"
 
 export PATH="$HOME/.cargo/bin:$PATH"
