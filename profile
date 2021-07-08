@@ -6,10 +6,6 @@ export LANG=en_US.UTF-8
 # See https://apple.stackexchange.com/a/371998
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-if [ -n "$PSOUT" ]; then
-  export DISPLAY=":0.0"
-fi
-
 # Java
 # See http://stackoverflow.com/a/6588410
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
