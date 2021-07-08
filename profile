@@ -16,7 +16,7 @@ if [ -f $HOME/.ansi_colors ]; then
     . $HOME/.ansi_colors
 fi
 
-# Move /usr/local/bin to beginning of path
+# Add (or move) Homebrew prefix to the beginning of the PATH
 CLEANPATH=`echo $PATH | sed -E 's#/usr/local/bin:?##'`
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
