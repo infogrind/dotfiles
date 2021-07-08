@@ -75,8 +75,5 @@ git_prompt() {
 
 export PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \W\[${NC}\]$(git_prompt) \$ "'
 
-# More memory for sbt
-export SBT_OPTS="-XX:MaxPermSize=256M"
-
 # Path config for Rust installation
 export PATH="$HOME/.cargo/bin:$PATH"
