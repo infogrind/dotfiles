@@ -73,11 +73,6 @@ git_prompt() {
 
 export PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \W\[${NC}\]$(git_prompt) \$ "'
 
-# Setting PATH for Python 2.7
-# The orginal version is saved in .profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
-
 # More memory for sbt
 export SBT_OPTS="-XX:MaxPermSize=256M"
 
