@@ -1,4 +1,12 @@
-# Function definition
+# This file should be symlinked as ~/.bashrc. Its contents are executed whenever
+# a new shell is launched (both login and non-login shells, by explicitly
+# calling it from .profile). See also the documentation at the top of profile.
+#
+# This file should contain any definitions that live only for the current shell
+# and are not inherited by subshells. These most particularly include alias
+# and function definitions.
+
+# Function definitions
 
 function ts   # ts x y sets screen width to x chars and y lines
 {
