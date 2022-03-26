@@ -33,7 +33,7 @@ source /Users/marius/.asdf/asdf.fish
 alias less='less -R'
 
 # One-command Homebrew update
-alias brewup='brew update && brew upgrade && brew cleanup -s && echo "All OK"'
+alias brewup='brew update && brew upgrade && brew autoremove && brew cleanup -s && echo "All OK"'
 
 # Push my private repo quickly to all remotes
 alias gpp='git push && git push diskstation'

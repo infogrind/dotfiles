@@ -91,7 +91,8 @@ alias g='git'
 alias gd='git diff'
 alias gst='git status'
 alias gci='git commit'
-alias brewup='brew update && brew upgrade && brew cleanup -s && echo "All OK"'
+alias brewup='brew update && brew upgrade && brew cleanup -s \
+	&& brew autoremove && echo "All OK"'
 alias gpp='git push && git push diskstation'
 
 # Taken from https://stackoverflow.com/a/1571525
