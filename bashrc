@@ -98,6 +98,9 @@ alias gpp='git push && git push diskstation'
 # Taken from https://stackoverflow.com/a/1571525
 alias git-root='cd $(git rev-parse --show-toplevel)'
 
+# Use exa for good
+alias ls=exa
+
 
 
 ################################################################################
