@@ -28,10 +28,26 @@
 [mergetool]
 	prompt = false
 [merge]
-	tool = Kaleidoscope
+	conflictstyle = diff3
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [core]
 	autocrlf = input
 	editor = vim -f
+	# From https://github.com/dandavison/delta#get-started
+	pager = delta
+
+# The following are from https://github.com/dandavison/delta#get-started
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true  # use n and N to move between diff sections
+	light = false    # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
