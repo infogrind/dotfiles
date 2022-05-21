@@ -40,3 +40,7 @@ alias gpp='git push && git push diskstation'
 
 # Note that .bashrc currently contains other aliases, but in practice I have
 # found that I am not really using these, so I am not migrating them for now.
+
+set -gx FZF_DEFAULT_COMMAND "fd --type file --color=always"
+set -gx FZF_DEFAULT_OPTS "--ansi"
+set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
