@@ -42,3 +42,8 @@ source /Users/marius/.asdf/asdf.sh
 if [ -f $HOME/.bashrc ]; then
   . $HOME/.bashrc
 fi
+
+# Setting up FZF to use fd (see https://github.com/sharkdp/fd#using-fd-with-fzf)
+export FZF_DEFAULT_COMMAND='fd --type file --color=always'
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
