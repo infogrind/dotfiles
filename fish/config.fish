@@ -24,6 +24,9 @@ set -x PKG_CONFIG_PATH "/usr/local/opt/icu4c/lib/pkgconfig:$PKG_CONFIG_PATH"
 set -x RUBY_CONFIGURE_OPTS "--with-openssl-dir=/usr/local/opt/openssl@1.1 --with-readline-dir=/usr/local/opt/readline"
 source /Users/marius/.asdf/asdf.fish
 
+# Use 'bat' for fzf preview
+set -gx FZF_CTRL_T_OPTS "--preview='bat --style=numbers --color=always {}'"
+
 
 ################################################################################
 # Aliases and Functions
