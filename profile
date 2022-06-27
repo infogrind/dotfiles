@@ -16,34 +16,15 @@
 # vim:ft=sh
 export EDITOR="/usr/bin/vim"
 
-# Locale settings to enable proper use of Unicode/UTF-8 throughout
-export LC_ALL=en_US.UTF-8
-
-# Disable OS X Catalina warning about zsh being the default shell
-# See https://apple.stackexchange.com/a/371998
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
-# Add (or move) Homebrew prefix to the beginning of the PATH
-CLEANPATH=`echo $PATH | sed -E 's#/usr/local/bin:?##'`
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
 # Add personal bin directory to beginning of path.
 export PATH=$HOME/bin:$PATH
 
-# Path config for Rust installation
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Added by GDK bootstrap
-export PKG_CONFIG_PATH="/usr/local/opt/icu4c/lib/pkgconfig:${PKG_CONFIG_PATH}"
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1 --with-readline-dir=/usr/local/opt/readline"
-source /Users/marius/.asdf/asdf.sh
+# Run local .profile if it exists
+if [ -f "$HOME/.profile_local" ]; then
+	. "$HOME/.profile_local"
+fi
 
 # Run .bashrc if it exists
 if [ -f $HOME/.bashrc ]; then
   . $HOME/.bashrc
 fi
-
-# Setting up FZF to use fd (see https://github.com/sharkdp/fd#using-fd-with-fzf)
-export FZF_DEFAULT_COMMAND='fd --type file --color=always'
-export FZF_DEFAULT_OPTS="--ansi"
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

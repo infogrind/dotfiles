@@ -7,27 +7,6 @@
 # and function definitions.
 
 ################################################################################
-# Bash completions
-################################################################################
-
-# Source all homebrew bash completion files
-if type brew &>/dev/null; then
-  HOMEBREW_PREFIX="$(brew --prefix)"
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
-      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
-    done
-  fi
-fi
-
-# fzf initialization includes bash completions, so we need to include it here
-# rather than in profile:
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-
-################################################################################
 # Function definitions
 ################################################################################
 
@@ -91,15 +70,9 @@ alias g='git'
 alias gd='git diff'
 alias gst='git status'
 alias gci='git commit'
-alias brewup='brew update && brew upgrade && brew cleanup -s \
-	&& brew autoremove && echo "All OK"'
-alias gpp='git push && git push diskstation'
 
 # Taken from https://stackoverflow.com/a/1571525
 alias git-root='cd $(git rev-parse --show-toplevel)'
-
-# Use exa for good
-alias ls=exa
 
 
 
@@ -113,3 +86,8 @@ if [ -f $HOME/.ansi_colors ]; then
     . $HOME/.ansi_colors
 fi
 PROMPT_COMMAND='PS1="\[${LIGHTGREEN}\]\u@\h\[${LIGHTBLUE}\] \W\[${NC}\]$(git_prompt) \$ "'
+
+# Run machine-specific bashrc if it exists
+if [ -f $HOME/.bashrc_local ]; then
+	. $HOME/.bashrc_local
+fi
